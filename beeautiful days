@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a,b,c,q,p=0,r;
+    
+    cin>>a>>b>>c;
+
+    int d[b-a+1],e[b-a+1];
+    
+      int i;
+      
+      for(i=0;i<(b-a+1);i++)
+      {
+        d[b-a+1]=a+i;  
+      }
+        
+    for(i=0;i<(b-a+1);i++)
+    {
+        p=0;
+        q=d[i];
+        
+        while(q>0)
+        {
+            q=q/10;
+            p++;
+            
+        }
+        b=10;
+        for(j=0;j<p;j++)
+        {
+            b*=10;
+        }
+        
+        
+        while(p>0)
+        {
+                   
+        }
+        
+        
+    }
+    
+    return 0;
+    
+}    
+    
+    
+    
+    
+    
+    
