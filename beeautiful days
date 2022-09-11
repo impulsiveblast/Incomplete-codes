@@ -3,11 +3,11 @@ using namespace std;
 
 int main()
 {
-    int a,b,c,q,p=0,r;
+    int a,b,c,q,p=0,r,t=0,el,j;
     
     cin>>a>>b>>c;
 
-    int d[b-a+1],e[b-a+1];
+    int d[b-a+1];
     
       int i;
       
@@ -27,20 +27,32 @@ int main()
             p++;
             
         }
-        b=10;
+        
+        el=10;
         for(j=0;j<p;j++)
         {
-            b*=10;
+            el*=10;
         }
         
-        
-        while(p>0)
+        q=d[i];
+        int s=0;
+        while(el>0)
         {
-                   
+            r=q%10;
+            s+=r*el;
+            q=q/10;
+            el=el/10;
         }
         
+        
+        if((d[i]-s)%c==0)
+        {
+            t++;
+        }
         
     }
+    
+    cout<<t;
     
     return 0;
     
