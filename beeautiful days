@@ -28,14 +28,15 @@ int main()
             
         }
         
-        el=10;
-        for(j=0;j<p;j++)
+        el=1;
+        for(j=0;j<p-1;j++)
         {
             el*=10;
         }
         
         q=d[i];
         int s=0;
+        
         while(el>0)
         {
             r=q%10;
