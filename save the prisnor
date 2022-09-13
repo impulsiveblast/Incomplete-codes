@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t,i;
+    cin>>t;
+    int n[t],m[t],s[t];
+    
+    for(i=0;i<t;i++)
+    {
+        cin>>n[t]>>m[t]>>s[t];
+    }
+    
+    
+    for(i=0;i<t;i++)
+    {
+        for(j=1;j<m[i]+1;j++)
+        {
+            if()
+            
+            if((j+s[i])>n[i]-1)
+            {
+                a[j+s[i]-k*n]=j;
+                
+            }
+        }
+    }
+}
