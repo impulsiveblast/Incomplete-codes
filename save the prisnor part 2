@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t,i;
+    cin>>t;
+    int n[t],m[t],s[t];
+    
+    for(i=0;i<t;i++)
+    {
+        cin>>n[t]>>m[t]>>s[t];
+    }
+    
+    
+    
+    for(i=0;i<t;i++)
+    {
+            cout<<((s[i]-1+m[i])%n[i])+1<<endl;
+            
+    }
+    
+    
+    return 0;
+    
+    
+    
+    
+}
