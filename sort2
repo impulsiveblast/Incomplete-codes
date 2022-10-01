@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n],i,j,t;
+    
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    
+    }
+   
+    
+   i=1;
+    
+    while(i<n)
+  {
+    
+    if(a[i-1]<a[i])
+    {
+        for(j=0;j<n;j++)
+        {
+            cout<<a[j]<<" ";
+        }
+        cout<<"\n";
+        i++;
+    }
+    
+    else
+    {
+        t=a[i];
+        a[i]=a[i-1];
+        a[i-1]=t;
+        
+        for(j=0;j<n;j++)
+        {
+            cout<<a[j]<<" ";
+        }
+        cout<<"\n";
+        i++;
+    }
+  }
+  
+  
+  
+  
+    
+    
+    
+    
+    return 0;
+    
+}
