@@ -29,9 +29,9 @@ int main()
     for(i=0;i<p;i++)
     {
         if(s[i]=='a')
-        {
+         {
             a[i]=b[0];
-        }
+         }
         
         else if(s[i]=='b')
         {
@@ -166,6 +166,7 @@ int main()
     }
     
     int t;
+    
     for(i=0;i<p-1;i++)
     {
         for(j=0;j<p-i;j++)
