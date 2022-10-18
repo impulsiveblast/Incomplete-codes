@@ -1,0 +1,173 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+ {
+    int h,m,s;
+    char c1,c2,c3='0';
+    
+    string s2;
+    
+    cin>>h>>c1>>m>>c2>>s>>s2;
+    
+    
+    if(s2=="AM")
+    {
+        if(h<10 && m<10 && s<10)
+        {
+            cout<<0<<h<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(h<10 && m<10 && s>=10)
+        {
+            cout<<0<<h<<c1<<0<<m<<c2<<s;
+        }
+        
+        else if(h<10 && m>=10 && s<10)
+        {
+            cout<<0<<h<<c1<<m<<c2<<0<<s;
+        }
+        
+        else if(h>=10 && m<10 && s<10 && h!=12)
+        {
+            cout<<h<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(h>=10 && m>=10 && s>=10 && h!=12)
+        {
+            cout<<h<<c1<<m<<c2<<s;
+        }
+        
+        else if(h<10 && m>=10 && s>=10)
+        {
+            cout<<0<<h<<c1<<m<<c2<<s;
+        }
+        
+        else if(h>=10 && m<10 && s>=10)
+        {
+            cout<<h<<c1<<0<<m<<c2<<s;
+        }
+        
+        else if(h>=10 && m>=10 && s<10)
+        {
+            cout<<0<<h<<c1<<m<<c2<<0<<s;
+        }
+        
+        
+        
+        
+        else if(h==12)
+     {
+            if(m<10 && s<10 )
+        {
+            cout<<h-12<<0<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(m<10 && s>=10)
+        {
+            cout<<h-12<<0<<c1<<0<<m<<c2<<s;
+        }
+        
+        else if(m>=10 && s<10)
+        {
+            cout<<h-12<<0<<c1<<m<<c2<<0<<s;
+        }
+        
+        
+        
+        else if(m>=10 && s>=10)
+        {
+            cout<<h-12<<0<<c1<<m<<c2<<s;
+        }
+        
+        else
+        {
+            cout<<c3<<0<<c1<<m<<c2<<s;
+        }
+        
+       
+     }
+        
+        
+    }
+    
+    else if(s2=="PM")
+    {
+        if(m<10 && s<10 && h!=12)
+        {
+            cout<<12+h<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(m<10 && s>=10 && h!=12)
+        {
+            cout<<12+h<<c1<<0<<m<<c2<<s;
+        }
+        
+        else if(m>=10 && s<10 && h!=12)
+        {
+            cout<<12+h<<c1<<m<<c2<<0<<s;
+        }
+        
+        else if(m<10 && s<10 && h!=12)
+        {
+            cout<<12+h<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(m>=10 && s>=10 && h!=12)
+        {
+            cout<<12+h<<c1<<m<<c2<<s;
+        }
+        
+     else if(h==12)
+        
+     {
+           if(m<10 && s<10 )
+        {
+            cout<<12<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(m<10 && s>=10)
+        {
+            cout<<12<<c1<<0<<m<<c2<<s;
+        }
+        
+        else if(m>=10 && s<10)
+        {
+            cout<<12<<c1<<m<<c2<<0<<s;
+        }
+        
+        else if(m<10 && s<10)
+        {
+            cout<<12<<c1<<0<<m<<c2<<0<<s;
+        }
+        
+        else if(m>=10 && s>=10)
+        {
+            cout<<12<<c1<<m<<c2<<s;
+        }
+        
+        else
+        {
+            cout<<12<<c1<<m<<c2<<s;
+        }
+        
+        
+               
+     }
+        
+    }
+        
+        
+        else
+       {
+        cout<<12<<c1<<m<<c2<<s;
+       }
+    
+    
+    
+    
+    
+    
+    return 0;
+}
