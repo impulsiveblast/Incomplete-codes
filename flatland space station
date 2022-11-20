@@ -1,75 +1,76 @@
 #include<iostream>
-#include<algorithm>
-
 using namespace std;
 
 int main()
 {
-    int i,n1,n2,j,k,t;
+    int n,m,i,j,t;
+    cin>>n>>m;
     
-    cin>>n1>>n2;
+    int a[m],b[m],c[n];
     
-    int a[n2],c[n1],d[n2];
-    
-    for(i=0;i<n2;i++)
+    for(i=0;i<m;i++)
     {
         cin>>a[i];
     }
     
-    
-    for(i=0;i<n1;i++)
+    for(i=0;i<n;i++)
     {
-        for(k=0;k<n2;k++)
-                {
-                    if(i>a[k])
-                    {
-                        d[k]=(i-a[j]);
-                    }
-                    
-                    else if(i<a[k])
-                    {
-                        d[k]=(a[i]-i);
-                    }
-                    
-                    else
-                    {
-                        d[k]=0;
-                    }
-                    
-                }
-                
-                 for(k=0;k<n2;k++)
-                {
-                    t=d[k];
-                    if(d[k]>d[k+1])
-                    {
-                        d[k]=d[k+1];
-                        d[k+1]=t;
-                    }
-                }
-                
-                c[i]=d[0];
-                
+        b[i]=i;
     }
-
-                 
-                
-                
     
-      for(i=0;i<n2;i++)
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
         {
-            t=c[i];
-            if(c[i]>c[i+1])
+            if((b[i]-a[j])>=0)
             {
-                c[i]=c[i+1];
-                c[i+1]=t;
+              c[j]=(b[i]-a[j]);        
             }
             
-            
+            else 
+            {
+              c[j]=(a[j]-b[i]);   
+            }
         }
         
-    cout<<c[n2-1];
-      
+        if(m>1)
+        {
+          t=min(c[0],c[1]);
+        
+          for(j=1;j<m-1;j++)
+          {
+            t=min(t,c[j+1]);
+          }
+        }
+        
+        else
+        {
+          t=c[0];
+        }
+        
+        a[i]=t;
+         
+         
+        
+    }
+    
+    for(i=0;i<n-1;i++)
+    {
+        t=a[i];
+        for(j=0;j<n-i;j++)
+        {
+            if(a[i]>a[i+1])
+            {
+                a[i]=a[i+1];
+                a[i+1]=t;
+            }
+        }
+    }
+    
+    cout<<a[n-1];
+    
     return 0;
+    
+    
     
 }
