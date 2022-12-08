@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+void solve()
+{
+    int n,j=0,ct=0,ans=0;
+    cin>>n;
+    string s;
+    cin>>s;
+    char ch='a';
+    for(int i=0;i<n;i++)
+    {
+        ch=s[i];
+        ct=0;
+        while(j<n)
+        {
+            if(ch==s[j])
+            {
+                ct++;
+                j++;
+            }
+            else
+            {
+                string s1;
+                s1=s.substr(i,ct);
+                auto it=find(s.begin()+i+1,s.end(),s1);
+                if(it!=s.end())
+                {
+                    if(ans<ct){ans=ct;}
+                }
+                i=j-1;
+                break;
+            }
+        }
+    }
+    cout<<ans<<endl;
+    
+}
+int main() 
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+	return 0;
+}
