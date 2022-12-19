@@ -55,7 +55,8 @@ int main()
            
            j++;
         }
-      t=0;  
+        
+    k=0;
     if(b>a)
     {
         cout<<-1<<endl;
@@ -65,10 +66,10 @@ int main()
     {
        for(j=0;j<b;j++)
        {
-           t+=c2[j];
+           k+=c2[j];
        }
        
-       cout<<t;
+       cout<<k<<endl;
     }
         
         
