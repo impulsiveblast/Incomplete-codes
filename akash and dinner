@@ -4,60 +4,67 @@ using namespace std;
 int main()
 
 {
-    int i,a,j,b,n;
+    int i,a,j,b,n,k;
     cin>>n;
     
     for(i=0;i<n;i++)
     {
+        int t;
         cin>>a>>b;
         
-        int c0[a],c1[a]
+        int c0[a],c1[a];
         
-        for(j=0;j<a;j++)
+        for(i=0;i<a;i++)
         {
-            cin>>c0[j];
+           cin>>c0[i]; 
         }
         
-        for(j=0;j<a;j++)
+        for(i=0;i<a;i++)
         {
-            cin>>c1[j];
+           cin>>c1[i]; 
         }
         
-        for(j=0;j<a;j++)
+        for(i=0;i<a;i++)
         {
-            t=max(c0[j],c0[j+1]);
+           t=max(c0[i],c0[i+1]); 
         }
         
         int c2[t];
-        k=1;
-        while(k<t+1)
+        j=0;
+        while(j<t)
         {
-            s=0;
-            for(j=0;j<t;j++)
+            int m=0;
+            for(k=0;k<n;k++)
           {
-            if(c0[j]==k)
-             {
-               if(s==0)
-               {
-                   c2[k-1]=c1[j];
-               }
-               else
-               {
-                   c2[k-1]=min(c2[k-1],c1[j]);
-               }
+           if( c0[k]==j+1)
+            {
+               if(m==0)
+                {
+                   c2[j]=c1[k];
+                   m++;
+                }
+                
+                else
+                {
+                    c2[j]=min(c2[j],c1[k]);
+                }
+               
              }
-           
-             k++;
-           
+            
            }
-          
+           
+           j++;
         }
         
-        
-        
-        
+        for(i=0;i<n;i++)
+    {
+        cout<<c2[i]<<endl;
+    }
         
         
         
     }
+
+    return 0;
+
 }
