@@ -55,15 +55,25 @@ int main()
            
            j++;
         }
-        
-        for(i=0;i<n;i++)
+      t=0;  
+    if(b>a)
     {
-        cout<<c2[i]<<endl;
+        cout<<-1<<endl;
+    }
+    
+    else
+    {
+       for(j=0;j<b;j++)
+       {
+           t+=c2[j];
+       }
+       
+       cout<<t;
     }
         
         
         
-    }
+ }
 
     return 0;
 
