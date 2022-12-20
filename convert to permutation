@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t,n1,n2,i,j,m;
+    cin>>n1;
+      
+    int b[n1];
+ 
+    for(i=0;i<n1;i++)
+    {
+        m=0;
+        cin>>n2;
+        int a[n2];
+        
+        for(j=0;j<n2-1;j++)
+        {
+           t=max(a[j],a[j+1]); 
+        }
+        
+        for(j=0;j<n2;j++)
+        {
+            if(t==n2)
+            {
+                m++;
+            }
+        }
+        
+        sort(a,a+n2);  //ascending
+        
+        
+        if(t>n2||m>1)
+        {
+            b[i]=-1;
+        }
+        
+        else
+        {
+            t=n2;
+            m=0;
+           for(j=0;j<n2;j++)
+           {
+              m+=(t-a[n2-1-j]);
+               t--;
+           }
+           
+           b[i]=m;
+           
+        }
+        
+    }
+    
+    for(i=0;i<n1;i++)
+    {
+        
+        cout<<b[i]<<endl;
+    }
+    
+    
+    return 0;
+    
+}
