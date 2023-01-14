@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+    int data;
+    struct node*link;
+}*top=NULL;
+
+//inserting 50 in stack
+
+
+void isempty()
+{
+    if(top==NULL)
+    {
+        return 1;
+    }
+    
+    else
+    {
+        return 0;
+    }
+}
+ void push(int data)
+  {
+    struct node *ptr=(struct node*)malloc(sizeof(struct node));
+    if(ptr=NULL)
+    {
+        printf("stack overflow");
+        return;  //or exit(1);
+    }
+    
+    ptr->data=data;
+    ptr->NULL;
+    
+    ptr->link=top;
+    top=ptr;
+  }
+  
+  void pop(int data)
+  {
+      int v;
+      v=top->data;
+      struct node*ptr2;
+      ptr2=top;
+      
+      if(top==NULL)
+      {
+          printf("stack underflow");
+          
+          exit(1);
+      }
+      
+      else
+      {
+          top=top->link;
+          free(ptr2);
+          ptr2=NULL;        
+      }
+      
+      
+  }
+  
+  void print()
+  {
+      struct node *ptr;
+      
+      ptr=top;
+      
+      while(ptr->link!=NULL)
+      {
+          printf("%d ",ptr->data);
+          ptr=ptr->link;
+      }
+      
+      
+  }
+  
+  
+  
