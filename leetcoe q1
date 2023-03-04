@@ -1,0 +1,65 @@
+#include<bits/stdc++>
+uisng namespace std;
+
+int main()
+{
+
+ int n,a,i,j;
+
+ cin>>n;
+
+ for(i=0;i<n;i++) 
+ {
+     cin>>a;
+     int t=a,s=0;
+
+
+     while(t>0)
+     {
+         t=t/10;
+         s++;
+     }
+     
+     t=a;
+     
+     int p[s];
+    s=0;
+     while(t>0)
+     {
+         p[s]=t%10;
+         t=t/10;
+        s++;
+     }
+
+     sort(p,p+s)
+
+     if(s<3)
+     {
+         cout<<p[0]+p[1];
+     }
+    t=s/2;
+    int s2=0;
+     else 
+     {
+        
+      
+            for(j=0;j<t-1;j++)
+         {
+          s2+=p[0]*10;  
+         }
+        t--;
+
+        for(j=0;j<t-1;j++)
+        {
+            s2+=p[2]*10;
+        }
+
+        for(j=1;)
+
+
+
+     }
+
+
+ } 
+}
