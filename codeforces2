@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+ {
+   int n1,n2,i,j;
+   string s;
+   cin>>n1;
+   
+   for(i=0;i<n1;i++)
+   {
+       vector<int> v;
+       int sum1=0,sum2=0;
+       cin>>s;
+       j=0;
+       
+       while(s[j]!='\0')
+       {
+           if(s[j]=='1')
+           {
+               sum1++;
+           }
+           
+           j++;
+       }
+       
+       while(s[j]!='\0')
+       {
+           if((s[j]=='1' && sum2<(sum1)/2) || (s[j]=='0') )
+           {
+               if(s[j]=='1')
+               {
+                   sum2++;
+                   v.push_back('+');
+               }
+               else
+               {
+                   v.push_back('+');
+               }
+           }
+           else
+           {
+               v.push_back('-');
+           }
+           
+           j++;
+       }
+       j=0;
+      
+       for(int j:v)
+       {
+           cout<<j;
+       }
+       
+       
+       
+       
+   }
+
+      return 0;
+ }
+   
+   
+
