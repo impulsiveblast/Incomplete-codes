@@ -1,0 +1,86 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main ()
+{
+
+  int i,j,n1,n2,s1,s2;
+  string c1, c2;
+  cin >> n1;
+
+  for (i=0;i<n1;i++)
+    {
+      cin >> n2;
+
+      c1=to_string(n2);
+
+      s1=c1.size();
+
+      int t1=n2%7;
+      int n3 =n2-t1;
+      c2 = to_string (n3);
+      s2 = c2.size ();
+
+      int t2 = (n2+7)%7;
+      int n4 = (n2+7)-t2;
+      string c3 =to_string(n4);
+      int s3 = c3.size();
+      int sum1,sum2;
+      if (s1==s3 && s2==s3)
+	{
+	  j=0, sum1=0, sum2=0;
+
+	  while (j<s1)
+	    {
+	      if (c1[j]!=c2[j])
+	     {
+		  sum1++;
+		 }
+		 j++;
+	    }
+
+	  j=0;
+	  while (j<s1)
+	    {
+	      if (c1[j]!=c3[j])
+		 {
+		  sum2++;
+		 }
+		  j++;
+	    }
+
+	  if (sum1>sum2)
+	    {
+	      cout<<c3<<endl;
+	    }
+
+	  else if (sum1<sum2)
+	    {
+	      cout<<c2<<endl;
+	    }
+
+	  else
+	    {
+	      cout<<c2<<endl;
+	    }
+	}
+
+      else if (s1==s3 && s2!=s3)
+	{
+	  cout<<c1<<endl;
+	}
+
+      else
+	{
+	  cout<<c2<<endl;
+	}
+      
+     
+
+
+    }
+
+
+  return 0;
+
+}
