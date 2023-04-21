@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,i,sum;
+    string s;
+    
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        int j=0,q=0;
+        vector<int> v;
+        cin>>s;
+        
+        while(s[j]!='\0')
+        {
+            if(s[j]=='?')
+            {
+                v.push_back(1);
+                j++;
+                q++;
+            }
+            else
+            {
+                v.push_back(0);
+                j++;
+            }
+        }
+        
+        if(v.size()>0)
+        {
+            if(q==1)
+            {
+               if(v[0]==0)
+               {
+                   cout<<10<<endl;
+               }
+               else
+               {
+                   cout<<9<<endl;
+               }
+            }
+            else if(q>1)
+            {
+                if(v[0]==0)
+                {
+                    j=0;
+                    sum=1;
+                    while(j<q)
+                    {
+                        sum=sum*10;
+                        j++;
+                    }
+                    cout<<sum<<endl;
+                }
+                else
+                {
+                    
+                    j=0;
+                    sum=1;
+                    while(j<q-1)
+                    {
+                        sum=sum*10;
+                        j++;
+                    }
+                    
+                    cout<<sum*9<<endl;
+                }
+            }
+            else
+            {
+                if(s[0]=='0')
+                {
+                    cout<<0<<endl;
+                }
+                else
+                {
+                    cout<<1<<endl;
+                }
+            }
+        }
+        
+        
+        
+    }
+    return 0;
+}
