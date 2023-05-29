@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class stack{
+    //properties
+        
+        
+        
+        
+        
+        void push(int v)
+        {
+            if(top==size-1)
+            {
+                cout<<"stack overflow"<<endl;
+            }
+            else
+            {
+                top++;
+                arr[top]=v;
+                
+            }
+        }
+        
+        void pop()
+        {
+            if(top==-1)
+            {
+                cout<<"stack underflow"<<endl;
+            }
+            else
+            {
+                top--;
+            }
+            
+        }
+        
+        int peek()
+        {
+            if(top!=-1)
+            {
+                return arr[top]<<endl;
+            }
+            else
+            {
+                cout<<"stack empty"<<endl;
+            }
+            
+        }
+        
+        bool isempty()
+        {
+            if(top==-1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    
+    
+    //behaviour
+};
+
+
+
+int main()
+{
+     
+}
