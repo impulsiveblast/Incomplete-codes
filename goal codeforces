@@ -1,1 +1,73 @@
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long n1,i,j,goal,t;
+    cin>>n1;
+    
+    for(i=0;i<n1;i++)
+    {
+       cin>>goal;
+       
+       if(goal%6==0)
+       {
+           cout<<goal/3<<endl;
+       }
+       
+       else if(goal%3==0 && goal%2!=0)
+       {
+           cout<<goal/3<<endl;
+       }
+       
+       else if(goal%3!=0 && goal%2!=0)
+       {
+           if(goal%3==1)
+           {
+               cout<<goal/3+2<<endl;
+           }
+           else
+           {
+               cout<<goal/3+1<<endl;
+           }
+       }
+       else if(goal%2==0 && goal%3!=0)
+       {
+           if(goal%3==1)
+           {
+               t=goal;
+               long long m=0,m2;
+               while(t!=0)
+               {
+                   m++;
+                  t-=2;
+                  if(t%3==0)
+                  {
+                      m2=(t/3)+m;
+                      t=0;
+                  }
+                  
+                  
+               }
+               
+               
+            cout<<min(m2,((goal/3)+2))<<endl;
+           }
+           else
+           {
+             cout<<min((goal/2),((goal/3)+1))<<endl;
+               
+           }
+       }
+       else
+       {
+           cout<<"syesummmm pe syestummm baithara chora jaat ka"<<endl;
+       }
+       
+    }
+    
+    return 0; //169102654
+    // 92703079
+    
+}
