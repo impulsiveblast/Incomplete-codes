@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class hero{
+    
+    
+    private:
+    char level;
+    int health;
+    
+    
+    public:
+    int marks;
+    
+    //paramaterised constructor
+    
+    
+    
+    
+    // int getmarks()
+    // {
+    //     return marks;
+    // }
+    
+    char getlevel()        //output in char
+    {
+        return level;
+    }
+    
+    void setlevel(char l)           //output to be stored in char
+    {
+        level=l;
+    }
+    
+    void sethealth(int h)     
+    {
+        health=h;
+    }
+    
+    int gethealth()
+    {
+         return health; 
+    }
+    
+    
+};
+
+
+int main()
+{
+    //static allocation
+    hero h1;
+    
+    
+    // cout<<"Health value: "<<h1.health<<endl;
+    // cout<<"Level of h1: "<<h1.level<<endl;
+    
+    
+
+    // //class can only be acessed via . operatop
+    // cout<<"Health value: "<<h1.health<<endl;
+    // cout<<"Level of h1: "<<h1.level<<endl;
+    
+    
+    // // // h1.sethealth(90);
+    h1.setlevel('B');
+    h1.sethealth(100); 
+    cout<<"Health value: "<<h1.gethealth()<<endl;
+    cout<<"Level value: "<<h1.getlevel()<<endl;
+    cout<<sizeof(h1)<<endl;
+    // cout<<"Level of h1: "<<getlevel()<<endl;
+    
+    //static vs dynamic allocation
+    
+    
+    //dynamic allocation
+    hero *b=new hero;
+    
+    b->sethealth(19);
+    b->setlevel('C');
+    cout<<"Health value: "<<(*b).gethealth()<<endl;
+    cout<<"Level value: "<<(*b).getlevel()<<endl;
+    
+    
+     
+    
+    return 0;
+}
