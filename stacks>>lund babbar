@@ -1,9 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+#define n 100
+
 class stack{
     //properties
         
+        int* arr;
         
         
         
