@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<char> v;
+    string s;
+    cin >> s;
+    int i = 0; // Initialize i to 0
+    int p = 0;
+
+    while (s[i] != '\0' && i < s.size())
+    {
+        if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B')
+        {
+            i += 3;
+
+            if (p > 0)
+            {
+                v.push_back(' ');
+                p = 0;
+            }
+        }
+        else
+        {
+            v.push_back(s[i]);
+            p++;
+        }
+        i++; // Increment i after each iteration
+    }
+
+    for (i = 0; i < v.size(); i++)
+    {
+        cout << v[i];
+    }
+
+    return 0;
+}
