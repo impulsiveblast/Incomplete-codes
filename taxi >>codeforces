@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    int a[n],i,j;
+    
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    sort(a,a+n);
+    vector<int> v;
+    
+    for(i=0;i<n;i++)
+    {
+        v[i]=a[n-i-1];
+    }
+    
+    i=0;
+    j=n-i-1;
+    
+    vector<int> v1;
+    
+    
+    while(i<j)
+    {
+      if(v[i]+v[j]<=4)
+      {
+          v[i]+=v[j];
+          j--;
+      }
+      else
+      {
+          v1.push_back(a[i]);
+          i++;
+          
+          for(int k=0;k<v.size()-j-1;k++)
+          {
+            v.pop_back();
+          }
+          
+          j=v.size()-1;
+          
+      }
+    }
+    
+    
+    cout<<v1.size();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // for( i=0;i<n;i++)
+    // {
+    //          if((a[i]+b)<=4)
+    //          {
+    //           b+=a[i];
+    //          }
+    //   else{
+    //          v.push_back(b);
+    //          b=a[i];
+    //       }
+    // }
+    
+    
+    return 0;
+}
