@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+void min_mx_func(long long arr[],long long n)
+{
+    // int t=sizeof(arr)/sizeof(arr[0]);
+    long long mn=1,mx=1;
+    int i;
+    
+    // sort(arr,arr+n);
+    for(i=0;i<n;i++)
+    {
+        mn=min(arr[i],mn);
+        mx=max(arr[i],mx);
+    }
+    
+    cout<<mn<<" "<<mx;
+    
+    return;
+    
+}
+
+int main()
+{
+    long a[4]={1,3,2,4};
+    min_mx_func(a,4);
+    
+    return 0;
+}
