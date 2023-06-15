@@ -1,0 +1,56 @@
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+  
+  
+  vector<int> v;
+  vector<string> v1;
+  int i,k=0;
+  string s;
+  
+  while(nums.size()!=0)
+  {
+      if(nums[size()-1]==val)
+      {
+          nums.pop_back();
+          k++;
+      }
+      else
+      {
+          v.push_back(nums.top());
+          nums.pop_back();
+      }
+      
+  }
+  
+  
+  if(v.size()%2==0)
+  {
+    for(i=0;i<(v.size()/2);i++)
+    {
+        v[i]=v[v.size()-i-1];
+        // s+=to_string(v[i]);
+    }
+  }
+  else
+  {
+     for(i=0;i<(v.size()/2);i++)
+    {
+        v[i]=v[v.size()-i-1];
+        // s+=to_string(v[i]);
+    } 
+  }
+  
+  v1[0]=to_string(k);
+//   v1.push_back(k);
+  v1.push_back(" ");
+  for(i=0;i<v.size();i++)
+  {
+       s+=to_string(v[i]);
+  }
+  
+  
+  return s;
+  
+    }
+};
