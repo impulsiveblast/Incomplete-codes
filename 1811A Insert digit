@@ -1,61 +1,49 @@
-#include<bits/stdc++.h>
-using namespace std;
+def crc_sender(data, generator):
+    data_with_zeros = data + '0' * (len(generator) - 1)
+    
+    data_list = [int(bit) for bit in data_with_zeros]
+    
+    generator_list = [int(bit) for bit in generator]
+    
+    remainder = data_list[:]
+    for i in range(len(data_with_zeros) - len(generator) + 1):
+        if remainder[i] == 1:
+            for j in range(len(generator)):
+                remainder[i + j] ^= generator_list[j]
+    
+    remainder_str = ''.join(str(bit) for bit in remainder[-(len(generator) - 1):])
+    
+    final_codeword = data + remainder_str
+    
+    return final_codeword
+
+def crc_receiver(codeword, generator):
+    data = codeword[:-len(generator) + 1]
+    
+    remainder = codeword[-len(generator) + 1:]
+    
+    codeword_list = [int(bit) for bit in codeword]
+    
+    generator_list = [int(bit) for bit in generator]
+    
+    for i in range(len(codeword) - len(generator) + 1):
+        if codeword_list[i] == 1:
+            for j in range(len(generator)):
+                codeword_list[i + j] ^= generator_list[j]
+    
+    if all(bit == 0 for bit in codeword_list[-(len(generator) - 1):]):
+        return True, data
+    else:
+        return False, None
+
+dataword = '110101'
+generator = '1011'
+
+codeword = crc_sender(dataword, generator)
+print("Initial Codeword:", codeword)
 
 
-int main()
-{
-    int n1,n2,n3,j;
-    cin>>n1;
-    
-    for(int i=0;i<n1;i++)
-    {
-        vector<int> v;
-        cin>>n2>>n3;
-        
-        string s;
-        cin>>s;
-        int t=0;
-        for(j=0;j<n2;j++)
-        {
-            if((n3>=(int(s[j])-int('0'))) && (t==0))
-            {
-            //   t=1;
-              if(n3==(int(s[j])-int('0')))
-              {
-                if(j<n2-1)
-                {
-                  if((n3>(int(s[j+1])-int('0'))))
-                   {   
-                       t=1;
-                       v.push_back(n3);
-                       v.push_back((int(s[j])-int('0')));
-                   }
-                }
-                else
-                {
-                    t=1;
-                    v.push_back(n3);
-                    v.push_back((int(s[j])-int('0')));
-                }
-              }
-            }
-            else
-            {
-              v.push_back((int(s[j])-int('0')));
-            }
-         }
-        
-        if(t==0)
-        {
-            v.push_back(n3);
-        }
-        
-        for(auto j:v)
-        {
-            cout<<j;
-        }
-        cout<<endl;
-    }
-    
-    return 0;
-}
+is_valid, received_data = crc_receiver(codeword, generator)
+print("Received codeword is valid:", is_valid)
+if is_valid:
+    print("Received data:", received_data)
